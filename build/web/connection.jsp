@@ -14,7 +14,7 @@
         ResultSet rs = st.executeQuery("Select * from record where username='"+username+"' and password='"+pwd+"'");
         if(rs.next())
         {
-            response.sendRedirect("back.html");
+            response.sendRedirect("back.jsp");
         }
         else
         {

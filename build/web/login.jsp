@@ -58,7 +58,14 @@
         
         
     </script>
+    <style>
+body {
+    background-image: url("images/back3.png");
+}
+
+</style>
     </head>
+    
     <body style="text-align: center;">
         <form name="myForm" method="POST" action="connection.jsp">
             <fieldset id='fieldsetcss'>
@@ -71,7 +78,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Enter Password" value="" />
                 </div>
                 <br>
-                <button type="submit" name="action" onClick=" return validate(); " value="signin" class="btn btn-lg btn-primary">Signin</button>
+                <button type="submit" name="action" onClick=" return validate(); " value="signin" class="btn btn-lg btn-primary ">Signin</button>
                 <br>
                 <br>
                 <br>
@@ -80,6 +87,9 @@
                 <br>
                 <button type="submit" name="action" value="signup" class="btn btn-lg btn-danger">Signup</button>
                 
+                
+                
         </form>
+       
     </body>
 </html>

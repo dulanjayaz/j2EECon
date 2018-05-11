@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Mar 22, 2018, 1:29:11 PM
+    Document   : adminlogin
+    Created on : Apr 13, 2018, 8:30:48 PM
     Author     : DulanjayaSamarajeewa
 --%>
 
@@ -67,7 +67,7 @@ body {
     </head>
     
     <body style="text-align: center;">
-        <form name="myForm" method="POST" action="connection.jsp">
+        <form name="myForm" method="POST" action="Admincon.jsp">
             <fieldset id='fieldsetcss'>
                 <legend id="legendcss">Please Sign in</legend>
                 <div class="form-inline">
@@ -82,11 +82,7 @@ body {
                 <br>
                 <br>
                 <br>
-                <br>
-                <p>If you havn't account</p>
-                <br>
-                <button type="submit" name="action" value="signup" class="btn btn-lg btn-danger">Signup</button>
-                
+             
                 
                 
         </form>

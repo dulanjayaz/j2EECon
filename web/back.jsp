@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : back
+    Created on : Apr 13, 2018, 6:32:45 PM
+    Author     : DulanjayaSamarajeewa
+--%>
+
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -11,6 +16,12 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="b.css/styles.css" rel="stylesheet">
+                <style>
+body {
+    background-image: url("images/back3.png");
+}
+
+</style>
 	</head>
 	
 <!-- header -->
@@ -26,12 +37,14 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
+                
                 <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> User <span class="caret"></span></a>
                     <ul id="g-account-menu" class="dropdown-menu" role="menu">
                         <li><a href="#">My Profile</a></li>
                     </ul>
                 </li>
+                
                 <li><a href="index.html"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
             </ul>
         </div>
@@ -45,24 +58,22 @@
     <div class="row">
         <div class="col-sm-3">
             <!-- Left column -->
-            <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Tools</strong></a>
+            <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Project</strong></a>
 
             <hr>
-
-            <ul class="nav nav-stacked">
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Settings <i class="glyphicon glyphicon-chevron-down"></i></a>
+             <ul class="nav nav-stacked">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">My Project <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <ul class="nav nav-stacked collapse in" id="userMenu">
                         <li class="active"> <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Options</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Transactions</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                        <li><a href="view.jsp"><i class="glyphicon glyphicon-envelope"></i> view  <span class="badge badge-info">4</span></a></li>
+                        <li><a href="workersdetails.jsp"><i class="glyphicon glyphicon-cog"></i> Help us <span class="badge badge-help">10</span></a></li>
+                       
+                        <li><a href="index.jsp"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
                     </ul>
                 </li>
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
+            
+                </li>
+                
 
                     <ul class="nav nav-stacked collapse" id="menu2">
                         <li><a href="#">Information &amp; Stats</a>
@@ -106,7 +117,9 @@
             <div class="row">
                 <!-- center left-->
                 <div class="col-md-6">
-                    <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
+                  <a href="create.jsp">  <button type="submit" class="btn btn-primary">
+                                           C R E A T E    P R O J E C T
+                      </button></a>
 
                     <hr>
 
@@ -164,7 +177,7 @@
                             <h4>Notices</h4></div>
                         <div class="panel-body">
                             <div class="alert alert-info">
-                                <button type="button" class="close" data-dismiss="alert">Ã—</button>
+                                <button type="button" class="close" data-dismiss="alert">×</button>
                                 This is a dismissable alert.. just sayin'.
                             </div>
                             <p>This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.</p>
@@ -172,45 +185,7 @@
                         </div>
                     </div>
                    
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <i class="glyphicon glyphicon-wrench pull-right"></i>
-                                <h4>IF  YOU  HAVE  ANY  PROBLEM</h4>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <form method="post" action="FileUploadDBServlet" enctype="multipart/form-data">
-                                <div class="control-group">
-                                    <label>Name</label>
-                                    <div class="controls">
-                                        <input type="text" class="form-control" placeholder="Enter Name" name="firstName" size="50"/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label>Message</label>
-                                    <div class="controls">
-                                        <input type="text" class="form-control" placeholder="Enter Name" name="lastName" size="50"/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label>Image</label>
-                                    <div class="controls">
-                                        <input type="file" name="photo" size="50"/>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label></label>
-                                    <div class="controls">
-                                        <button type="submit" class="btn btn-primary">
-                                            Post
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--/panel content-->
-                    </div>
+                    
                     <!--/panel-->
 
                     
@@ -230,6 +205,7 @@
         <!--/col-span-9-->
     </div>
 </div>
+    
 <!-- /Main -->
 
 

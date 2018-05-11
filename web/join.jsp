@@ -26,63 +26,65 @@ body {
     <body style="text-align: center;">
         <form action=""  method="post">
               <fieldset id='fieldsetcss'>
-                <legend id="legendcss" >Please Signup</legend>
+                <legend id="legendcss" >Join Our Team</legend>
                 
                 <div class="form-inline">
                 <input type="text" class="form-control" name="nm" placeholder="Your name"/>
             </div>
+                <br>
+                  <div class="form-inline">
+                <input type="password" class="form-control"  name="ps" placeholder="Your Password"/>
+            </div>
                 
                 <br>
              <div class="form-inline">
-                <input type="text" class="form-control"  name="ls" placeholder="Your location"/>
+                <input type="text" class="form-control"  name="job" placeholder="Your job type"/>
+ 
+               <br>
+               * contractor, architect, quantity surveyor, engineer, consultants etc..
             </div>
                  <br>
                  <div class="form-inline">
-                <input type="text" class="form-control"  name="tp" placeholder="Your Phone number"/>
+                <input type="text" class="form-control"  name="tp" placeholder="Your Email"/>
             </div>
                  <br>
                  <div class="form-inline">
-                <input type="text" class="form-control"  name="un" placeholder="Your User Name"/>
+                <input type="text" class="form-control"  name="un" placeholder="Your Contact Number"/>
             </div>
                  <br>
-                 <div class="form-inline">
-                <input type="password" class="form-control"  name="ps" placeholder="Your Password"/>
-            </div>
+               
                  <br>
-                 <div class="form-inline">
-                <input type="text" class="form-control"  name="em" placeholder="Your Email"/>
-            </div>
-                 <br>
+
                 
             <button type="submit" class="btn btn-danger">Signup</button>
-            <a href="login.jsp" class="btn btn-default">Back</a>
+            <a href="index.html" class="btn btn-default">Back</a>
         </form>
         
         <%
             String  a = request.getParameter("nm");
-            String  b = request.getParameter("ls"); 
-            String  c = request.getParameter("tp"); 
-            String  d = request.getParameter("un"); 
-            String  e = request.getParameter("ps");
-            String  f = request.getParameter("em"); 
-            String host ="jdbc:mysql://localhost/jspdatabase";
+            String  b = request.getParameter("ps"); 
+            String  c = request.getParameter("job"); 
+            String  d = request.getParameter("tp"); 
+            String  e = request.getParameter("un");
+            
+            String host ="jdbc:mysql://localhost/appdb";
             Connection conn=null;
             PreparedStatement stmt = null;
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            if(a!=null && b!=null && c!=null && d!=null && e!=null && f!=null)
+            if(a!=null && b!=null && c!=null && d!=null && e!=null )
             {
                conn=DriverManager.getConnection(host,"root","");
-               String data = "insert into record(name,address,phone,username,password,email) values(?,?,?,?,?,?)";
+               String data = "insert into workers(name,password,type,email,tpnumber) values(?, ?, ?, ?, ?)";
                stmt= conn.prepareStatement(data);
                stmt.setString(1,a);
                stmt.setString(2,b);
                stmt.setString(3,c);
                stmt.setString(4,d);
                stmt.setString(5,e);
-               stmt.setString(6,f);
+              
                
                stmt.executeUpdate();
-               response.sendRedirect("login.jsp");
+               response.sendRedirect("adminlogin.jsp");
                
             }
             

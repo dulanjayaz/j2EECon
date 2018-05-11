@@ -1,3 +1,9 @@
+<%-- 
+    Document   : Admincon
+    Created on : Apr 21, 2018, 11:20:08 AM
+    Author     : DulanjayaSamarajeewa
+--%>
+
 <%@ page import="java.sql.*" %>
 <%
     String action=request.getParameter("action");
@@ -9,18 +15,18 @@
     try
     {
         Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/jspdatabase" , "root","");    
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/appdb" , "root","");    
         Statement st = con.createStatement();  
-        ResultSet rs = st.executeQuery("Select * from record where username='"+username+"' and password='"+pwd+"'");
+        ResultSet rs = st.executeQuery("Select * from workers where name='"+username+"' and password='"+pwd+"'");
         if(rs.next())
         {
-            response.sendRedirect("back.jsp");
+            response.sendRedirect("adminview.jsp");
         }
         else
         {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Username and password donot match'  );");
-            out.println("location='login.jsp';");
+            out.println("location='adminlogin.jsp';");
             out.println("</script>");
         }
     }
